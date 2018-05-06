@@ -1,0 +1,162 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 26, 2018, 2:20:05 PM
+    Author     : npvu
+*/
+
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td,
+.table-bordered>tfoot>tr>td {
+    border:1px solid #ddd !important
+}
+.form-inline label, input {
+    margin-right: 0px !important;
+}
+.margin-2 {
+    margin: 2px;
+}
+.margin-r-5 {
+    margin-right: 5px !important;
+}
+.margin-t-5 {
+    margin-top: 5px !important;
+}
+.margin-t-10 {
+    margin-top: 10px !important;
+}
+.margin-t-15 {
+    margin-top: 15px !important;
+}
+.margin-l-r-2 {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.bficon-error-circle-o:before {
+    color: #ffffff !important;
+    content: "\e088";
+}
+.required {
+    border-left: 3px solid red;
+}
+.dataTables_filter {
+        text-align: left !important;
+}
+a:hover {
+    text-decoration: none !important;
+}
+.btn-add-position {
+    position: absolute !important;
+}
+@media screen and (max-width: 767px){
+    .dataTables_filter {
+        text-align: left !important;
+    }
+}
+@media screen and (max-width: 400px){
+    .btn-add-position {
+        position: static !important;
+    }
+    .dataTables_filter {
+        text-align: right !important;
+    }
+    table {
+        width: 100% !important;
+    }
+}
+.skin-blue .main-header .navbar .nav>li>a {
+    height: 50px !important;
+}
+/*
+    Customize Bootfaces Css
+*/
+.input-group .input-group-addon {
+    border-left: 3px solid red !important;
+}
+.input-group .removeRequiredCSS {
+    border-left: 1px solid #ccc !important;
+}
+.content-header > h1{
+    color: #565656 !important;
+}
+
+.verify-lock .modal-body {
+    height: 120px;
+}
+.content-ckeditor img{
+    width: 100% !important;
+}
+.box-body table{
+    width: 100% !important;
+}
+.bf-message {
+    margin-bottom: 20px !important;
+}
+
+.unstyle-label {
+    font-weight: normal !important;
+}
+
+input + label {
+    margin-right: 10px !important;
+    font-weight: normal !important;
+}
+.txtNote {
+    padding: 0px !important;
+}
+/* CSS FOR BUTTON #button */
+.btn-danger {
+    color: #ffffff !important;
+}
+.btn {
+    min-width:100px !important;
+}
+.box-header + .box-btn{
+   
+}
+button .btn-edit,button .btn-lock,button .btn-unlock,button .btn-delete {
+    max-width: 40px !important;
+}
+
+.btn-icon {
+    display: inline-block !important;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid #f3e6e6;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 13px !important;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn-icon:hover{
+    background-color: #ffffff;
+}
+
+
+.alert-info {
+    background-color: #00a65a !important; 
+    border-color: #00a65a !important;
+}
+
+/* CSS FOR TEXT COLOR */
+.text-info {
+    color: #31708f !important;
+}
+/* END CSS FOR TEXT COLOR */

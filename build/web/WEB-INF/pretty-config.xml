@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+ 
+    <url-mapping id="login_1">
+        <pattern value="/dang-nhap/" />
+        <view-id value="/faces/page/login.xhtml" />
+    </url-mapping>
+    <url-mapping id="login_2">
+        <pattern value="/login/" />
+        <view-id value="/faces/page/login.xhtml" />
+    </url-mapping>
+    
+    <url-mapping id="QuanLyTaiKhoan_1">
+        <pattern value="/quan-ly/tai-khoan/" />
+        <view-id value="/faces/page/quanly/taikhoan/TaiKhoan.xhtml" />
+    </url-mapping>
+    <url-mapping id="QuanLyTaiKhoan_2">
+        <pattern value="/manager/account/" />
+        <view-id value="/faces/page/quanly/taikhoan/TaiKhoan.xhtml" />
+    </url-mapping>
+    <url-mapping id="ThongTinTaiKhoan">
+        <pattern value="/quan-ly/thong-tin-tai-khoan/" />
+        <view-id value="/faces/page/quanly/taikhoan/ThongTinTaiKhoan.xhtml" />
+    </url-mapping>
+    <url-mapping id="LichSuDangNhap_1">
+        <pattern value="/quan-ly/lich-su-dang-nhap/" />
+        <view-id value="/faces/page/quanly/taikhoan/LichSuDangNhap.xhtml" />
+    </url-mapping>
+    <url-mapping id="LichSuDangNhap_2">
+        <pattern value="/manager/history/" />
+        <view-id value="/faces/page/quanly/taikhoan/LichSuDangNhap.xhtml" />
+    </url-mapping>
+    
+    <url-mapping id="DanhMucBaiViet">
+        <pattern value="/quan-ly/danh-muc-bai-viet/" />
+        <view-id value="/faces/page/quanly/baiviet/DanhMucBaiViet.xhtml" />
+    </url-mapping>
+    <url-mapping id="QuanLyBaiViet">
+        <pattern value="/quan-ly/bai-viet/" />
+        <view-id value="/faces/page/quanly/baiviet/BaiViet.xhtml" />
+    </url-mapping>
+    <url-mapping id="QuanLyPreviewBaiViet">
+        <pattern value="/quan-ly/bai-viet/preview/" />
+        <view-id value="/faces/page/quanly/baiviet/Preview.xhtml" />
+    </url-mapping>
+    <url-mapping id="error401">
+        <pattern value="/error/401/" />
+        <view-id value="/faces/page/error/401.xhtml" />
+    </url-mapping>
+</pretty-config>
