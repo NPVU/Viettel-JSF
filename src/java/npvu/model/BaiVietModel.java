@@ -12,7 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.Transient;
@@ -26,8 +25,7 @@ import javax.persistence.Transient;
 public class BaiVietModel implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "baiviet_baiviet_id_seq")
-    @SequenceGenerator(name = "baiviet_baiviet_id_seq", sequenceName = "baiviet_baiviet_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "baiviet_id", unique = true, nullable = false)
     private int id;
     

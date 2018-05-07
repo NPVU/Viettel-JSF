@@ -13,7 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.Transient;
@@ -27,8 +26,7 @@ import javax.persistence.Transient;
 public class TaiKhoanModel implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "taikhoan_taikhoan_id_seq")
-    @SequenceGenerator(name = "taikhoan_taikhoan_id_seq", sequenceName = "taikhoan_taikhoan_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "taikhoan_id", unique = true, nullable = false)
     private long id;
     

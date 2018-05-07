@@ -12,7 +12,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -24,8 +23,7 @@ import javax.persistence.Temporal;
 @Table(name = "taptin")
 public class TapTinModel implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "taptin_taptin_id_seq")
-    @SequenceGenerator(name = "taptin_taptin_id_seq", sequenceName = "taptin_taptin_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "taptin_id", unique = true, nullable = false)
     private long id;
     
