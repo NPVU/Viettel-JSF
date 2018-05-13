@@ -64,7 +64,11 @@ public class ConfigWebsite implements Serializable{
     
     private void actionGetConfigWebsite(){
         confWebsite = confWebProvider.getConfigWebsite();
-        objBanner   = ttProvider.getTapTin(confWebsite.getTapTinID());
+        if(confWebsite != null){
+            objBanner   = ttProvider.getTapTin(confWebsite.getTapTinID());
+        } else {
+            confWebsite = new ConfigWebsiteModel();
+        }  
     }
     
     public void actionUpdateConfigWebsite(){
@@ -78,6 +82,7 @@ public class ConfigWebsite implements Serializable{
         } else {
             showGrowl.showMessageFatal(MessageConstant.MESSAGE_ERROR_UPDATE);
         }
+        actionGetConfigWebsite();
     }
 
     public int getViewMode() {
