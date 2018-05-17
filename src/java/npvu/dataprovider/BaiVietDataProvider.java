@@ -166,6 +166,29 @@ public class BaiVietDataProvider implements Serializable{
         return objBaiViet;
     }
     
+    public BaiVietModel getBaiVietMoiNhatByDanhMucID(int danhMucID){
+        Session session = HibernateUtil.currentSession();
+        BaiVietModel objBaiViet = new BaiVietModel();        
+        try {
+            session.beginTransaction();
+            objBaiViet = (BaiVietModel) session.createSQLQuery(" SELECT * "
+                    + " FROM baiviet bv "
+                    + " LEFT JOIN danhmuc_baiviet dmbv "
+                    + " ON dmbv.danhmuc_baiviet_id = bv.danhmuc_baiviet_id "
+                    + " WHERE dmbv.danhmuc_baiviet_id = "+danhMucID
+                    + " AND baiviet_xuatban = 1 "
+                    + " ORDER BY baiviet_id DESC LIMIT 1")
+                    .addEntity(BaiVietModel.class)
+                    .uniqueResult();
+            session.getTransaction().commit();
+	} catch (Exception e) {
+            log.error("Lỗi get bài viết mới nhất của danh mục ID: "+danhMucID+" {}", e);
+	} finally {
+            session.close();
+	}
+        return objBaiViet;
+    }
+    
     public boolean updateBaiViet(BaiVietModel objBaiViet){
         Session session = HibernateUtil.currentSession();
         try {

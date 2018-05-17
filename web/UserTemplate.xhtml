@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <h:outputStylesheet name="css/user_template/bootstrap.min.css" library="resources" />
+        <h:outputStylesheet name="css/user_template/animate.min.css" library="resources" />
+        <h:outputStylesheet name="css/user_template/prettyPhoto.css" library="resources" />
+        <h:outputStylesheet name="css/user_template/main.css" library="resources" />
+        <h:outputStylesheet name="css/user_template/responsive.css" library="resources" />
+        <h:outputStylesheet name="css/user_template/style.css" library="resources" />        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />        
+        <link rel="shortcut icon" type="image/x-icon" href="/resources/img/favicon.ico" />
+        <title>VIETTEL</title>        
+    </h:head>
+
+    <h:body>
+       
+        <ui:insert name="header">
+            <ui:include src="template/user/header.xhtml" />
+        </ui:insert>
+        <div id="container">
+        <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+        <ui:insert name="banner">
+            <ui:include src="template/user/banner.xhtml" />
+        </ui:insert>
+        <ui:insert name="content">
+            <ui:include src="template/user/content.xhtml" />
+        </ui:insert>
+        </div>
+        <ui:insert name="bottom">
+            <ui:include src="template/user/bottom.xhtml" />
+        </ui:insert>
+        <ui:insert name="footer">
+            <ui:include src="template/user/footer.xhtml" />
+        </ui:insert>
+    </h:body>
+    <h:outputScript name="js/user_template/jquery.js" library="resources"/>
+    <h:outputScript name="js/user_template/bootstrap.min.js" library="resources"/>
+    <h:outputScript name="js/user_template/jquery.prettyPhoto.js" library="resources"/>
+    <h:outputScript name="js/user_template/jquery.isotope.min.js" library="resources"/>
+    <h:outputScript name="js/user_template/wow.min.js" library="resources"/>
+    <h:outputScript name="js/user_template/main.js" library="resources"/>
+    
+</html>

@@ -3,11 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/src/java/npvu/dataprovider/ConfigWebsiteDataProvider.java</file>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/src/java/npvu/util/ShowGrowlUtils.java</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/resources/css/user_template/main.css</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/UserTemplate.xhtml</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/page/quanly/taikhoan/TaiKhoan.xhtml</file>
             <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/page/quanly/cauhinh/CauHinhChung.xhtml</file>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/src/java/npvu/controller/ConfigWebsite.java</file>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/src/java/npvu/model/ConfigWebsiteModel.java</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/resources/css/user_template/style.css</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/user/bottom.xhtml</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/user/content.xhtml</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/user/header.xhtml</file>
         </group>
     </open-files>
 </project-private>
