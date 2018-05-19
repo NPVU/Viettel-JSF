@@ -10,15 +10,16 @@ and open the template in the editor.
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <section id="bottom" style="padding-top: 10px;padding-bottom: 15px;">
-        <div class="container wow fadeInDown animated" data-wow-duration="1000ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 600ms; animation-name: fadeInDown;">
+        <!--<div class="container wow fadeInDown animated" data-wow-duration="1000ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 600ms; animation-name: fadeInDown;">-->
+        <div class="container wow fadeInDown animated">
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="widget">                       
                         <ul>
                             <li><h4>THÔNG TIN LIÊN HỆ</h4></li>
-                            <li><i class="fa fa-map-marker"></i> 123 Nguyễn Văn Cừ</li>
-                            <li><i class="fa fa-globe"></i> http://viettelcantho.vn</li>
-                            <li><i class="fa fa-envelope"></i> viettelcantho@gmail.com</li>                       
+                            <li><i class="fa fa-map-marker"></i> #{ThongTinController.confWebsite.websiteAddress}</li>
+                            <li><i class="fa fa-globe"></i> <a href="#{request.contextPath}/">#{request.requestURL}</a></li>
+                            <li><i class="fa fa-envelope"></i> #{ThongTinController.confWebsite.websiteEmail}</li>                       
                         </ul>
                     </div>    
                 </div>
@@ -26,7 +27,7 @@ and open the template in the editor.
                     <div class="widget">                       
                         <ul>
                             <li><h4>TỔNG ĐÀI</h4></li>
-                            <li><i class="fa fa-phone"></i> (84-292) 3 831 999 - 6 999 333</li>                    
+                            <li><i class="fa fa-phone"></i> #{ThongTinController.confWebsite.websitePhone}</li>                    
                         </ul>
                     </div>    
                 </div>

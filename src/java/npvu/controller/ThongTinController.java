@@ -11,8 +11,13 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import npvu.dataprovider.BaiVietDataProvider;
+import npvu.dataprovider.ConfigWebsiteDataProvider;
+import npvu.dataprovider.TapTinDataProvider;
 import npvu.model.BaiVietModel;
+import npvu.model.ConfigWebsiteModel;
 import npvu.model.DanhMucBaiVietModel;
+import npvu.model.TapTinModel;
+import npvu.session.SessionBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,24 +33,43 @@ public class ThongTinController implements Serializable{
 
     private List<DanhMucBaiVietModel> dsDMBaiViet   = new ArrayList<>();
     
+    private List<BaiVietModel> dsBaiViet   = new ArrayList<>();
+    
+    private final ConfigWebsiteDataProvider confWebProvider = new ConfigWebsiteDataProvider();
+    
     private final BaiVietDataProvider bvProvider    = new BaiVietDataProvider();
     
-    private BaiVietModel objBaiViet;
+    private final TapTinDataProvider ttProvider     = new TapTinDataProvider();
+            
+    private ConfigWebsiteModel confWebsite;
     
+    private TapTinModel tapTinBanner;
+    
+    private BaiVietModel objBaiViet;
+        
     /**
      * Creates a new instance of ThongTinController
      */
     public ThongTinController() {
         actionGetDanhSachDanhMucBaiViet();
-        actionGetBaiVietMoiNhat(1);
+        actionGetBaiVietHienThiTrangChu();
+        if(objBaiViet != null){
+            actionGetBaiVietLienQuan(objBaiViet);
+        }                
+        confWebsite = confWebProvider.getConfigWebsite();
+        tapTinBanner = ttProvider.getTapTin(confWebsite.getTapTinID());
     }
 
     private void actionGetDanhSachDanhMucBaiViet(){
         dsDMBaiViet = bvProvider.getDanhSachDanhMucBaiViet(null, -1);
     }
     
-    private void actionGetBaiVietMoiNhat(int danhMucID){
-        objBaiViet = bvProvider.getBaiVietMoiNhatByDanhMucID(danhMucID);
+    private void actionGetBaiVietHienThiTrangChu(){
+        objBaiViet = bvProvider.getBaiVietHienThiTrangChu();
+    }
+    
+    private void actionGetBaiVietLienQuan(BaiVietModel baiViet){
+        dsBaiViet  = bvProvider.getBaiVietLienQuan(baiViet);
     }
     
     /* Getter && Setter */
@@ -64,6 +88,30 @@ public class ThongTinController implements Serializable{
 
     public void setObjBaiViet(BaiVietModel objBaiViet) {
         this.objBaiViet = objBaiViet;
+    }
+
+    public List<BaiVietModel> getDsBaiViet() {
+        return dsBaiViet;
+    }
+
+    public void setDsBaiViet(List<BaiVietModel> dsBaiViet) {
+        this.dsBaiViet = dsBaiViet;
+    }
+
+    public ConfigWebsiteModel getConfWebsite() {
+        return confWebsite;
+    }
+
+    public void setConfWebsite(ConfigWebsiteModel confWebsite) {
+        this.confWebsite = confWebsite;
+    }
+
+    public TapTinModel getTapTinBanner() {
+        return tapTinBanner;
+    }
+
+    public void setTapTinBanner(TapTinModel tapTinBanner) {
+        this.tapTinBanner = tapTinBanner;
     }
     
 }

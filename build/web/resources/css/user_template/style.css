@@ -572,7 +572,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 @media (max-width: 768px) {
 .content {
 	padding: 40% 0 0;
-}
+    }
 }
 
 @media (max-width: 603px) {
@@ -612,7 +612,6 @@ label {
 	height: 3px;
         width:100%;	
 	background: #0dad8d;
-        margin-bottom: 30px;
 }
 .section-title{
     border: 1px solid #e5eceb;
@@ -663,4 +662,17 @@ label {
 .post-inner img{
     width:100%;
     position: relative;
+}
+.box-content{
+    padding: 20px;
+}
+.list-baiviet-lienquan li a:hover{
+    color: #E8CE0E;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #00918d !important;
 }

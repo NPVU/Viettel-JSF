@@ -7,16 +7,17 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <div class="header-content">
+      >
+    <div class="header-content wow fadeInDown">
 
         <a id="slide-out-open" class="slide-out-open" href="#"><span></span></a>
 
         <div class="logo" style=" margin-top:15px; margin-bottom:15px;">
             <h1>
-                <a title="Lắp Đặt Wifi Cáp Quang Viettel Cần Thơ" href="http://lapdatwifiviettel.org/">
-                    <img src="https://i.imgur.com/IOC65in.jpg" alt="Lắp Đặt Wifi Cáp Quang Viettel Cần Thơ" width="100%"/>
+                <a title="#{ThongTinController.confWebsite.websiteTitle}" href="#{request.requestURL}">                   
+                    <h:graphicImage name="#{FileConstant.path_upload_image}#{ThongTinController.tapTinBanner.tenLuuTru}"
+                                    alt="#{ThongTinController.tapTinBanner.ten}"
+                                    width="100%" height="auto" />
                 </a>
             </h1>			
         </div><!-- .logo /-->

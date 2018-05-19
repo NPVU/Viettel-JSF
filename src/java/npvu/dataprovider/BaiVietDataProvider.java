@@ -189,10 +189,57 @@ public class BaiVietDataProvider implements Serializable{
         return objBaiViet;
     }
     
-    public boolean updateBaiViet(BaiVietModel objBaiViet){
+    public BaiVietModel getBaiVietHienThiTrangChu(){
         Session session = HibernateUtil.currentSession();
+        BaiVietModel objBaiViet = new BaiVietModel();        
         try {
             session.beginTransaction();
+            objBaiViet = (BaiVietModel) session.createSQLQuery(" SELECT * "
+                    + " FROM baiviet bv "
+                    + " LEFT JOIN danhmuc_baiviet dmbv "
+                    + " ON dmbv.danhmuc_baiviet_id = bv.danhmuc_baiviet_id "
+                    + " WHERE baiviet_hienthi_trangchu = 1"
+                    + " AND baiviet_xuatban = 1 ")
+                    .addEntity(BaiVietModel.class)
+                    .uniqueResult();
+            session.getTransaction().commit();
+	} catch (Exception e) {
+            log.error("Lỗi get bài viết hiển thị trang chủ: {}", e);
+	} finally {
+            session.close();
+	}
+        return objBaiViet;
+    }
+    
+    public List<BaiVietModel> getBaiVietLienQuan(BaiVietModel baiViet){
+        Session session = HibernateUtil.currentSession();
+        List<BaiVietModel> dsBaiViet = new ArrayList<>();        
+        try {
+            session.beginTransaction();
+            dsBaiViet = session.createSQLQuery(" SELECT * "
+                    + " FROM baiviet"                   
+                    + " WHERE danhmuc_baiviet_id = "+baiViet.getDanhmuc_baiviet_id()
+                    + " AND baiviet_id != "+baiViet.getId()
+                    + " AND baiviet_xuatban = 1 "
+                    + " ORDER BY baiviet_id DESC")
+                    .addEntity(BaiVietModel.class)
+                    .list();
+            session.getTransaction().commit();
+	} catch (Exception e) {
+            log.error("Lỗi get bài viết liên quan : "+baiViet.getTieuDe()+" {}", e);
+	} finally {
+            session.close();
+	}
+        return dsBaiViet;
+    }
+    
+    public boolean updateBaiViet(BaiVietModel objBaiViet){
+        Session session = HibernateUtil.currentSession();       
+        try {
+            session.beginTransaction();
+             if(objBaiViet.getHienThiTrangChu() == 1){
+                session.createSQLQuery("UPDATE baiviet SET baiviet_hienthi_trangchu = 0").executeUpdate();
+            }
             session.saveOrUpdate(objBaiViet);           
             session.getTransaction().commit();
 	} catch (Exception e) {
@@ -219,5 +266,5 @@ public class BaiVietDataProvider implements Serializable{
             session.close();
 	}
         return true;
-    }
+    }       
 }
