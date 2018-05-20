@@ -6,9 +6,7 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -30,7 +28,7 @@ and open the template in the editor.
                 </div>
             </div>
             <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
+<!--            <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
                     <input type="text" name="q" class="form-control" placeholder="Search..."/>
                     <span class="input-group-btn">
@@ -38,11 +36,25 @@ and open the template in the editor.
                         </button>
                     </span>
                 </div>
-            </form>
+            </form>-->
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu tree" data-widget="tree">
-
+                <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) 
+                                          or Login.checkRole(Constant.role_admin_taikhoan)
+                                          or Login.checkRole(Constant.role_admin_baiviet)
+                                          or Login.checkRole(Constant.role_admin_hethong)}">
+                    <li class="header">DASHBOARD</li>
+                    <li>
+                        <a href="#{request.contextPath}/quan-ly/">
+                            <i class="fa fa-windows"></i>
+                            <span>Trang quản lý</span>
+                            <span class="pull-right-container">
+                                <span class="label bg-blue pull-right">hoạt động</span>
+                            </span>
+                        </a>
+                    </li>
+                </h:panelGroup>
                 <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) or Login.checkRole(Constant.role_admin_taikhoan)}">
                     <li class="header">QUẢN LÝ TÀI KHOẢN NGƯỜI DÙNG</li>
                     <li>
@@ -54,14 +66,14 @@ and open the template in the editor.
                             </span>
                         </a>
                     </li>
-                    <li>
+<!--                    <li>
                         <a href="#{request.contextPath}/quan-ly/lich-su-dang-nhap/">
                             <i class="fa fa-calendar"></i> <span>Lịch sử đăng nhập</span>
                             <span class="pull-right-container">
                                 <span class="label bg-red pull-right">bảo trì</span>
                             </span>
                         </a>
-                    </li>
+                    </li>-->
                 </h:panelGroup>
 
                 <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) or Login.checkRole(Constant.role_admin_baiviet)}">
