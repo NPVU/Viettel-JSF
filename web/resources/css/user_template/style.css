@@ -676,3 +676,17 @@ label {
 ::-webkit-scrollbar-thumb {
     background-color: #00918d !important;
 }
+
+.frmMenu input {
+    outline:none;
+    border: 0px;
+    position: relative;
+    background-color: transparent;
+    margin: 0px !important;
+    min-width: 160px;
+    text-align: left;
+}
+.navbar-fixed-top .navbar-nav > li > a{
+    min-width: 100px;
+    text-align: center;
+}

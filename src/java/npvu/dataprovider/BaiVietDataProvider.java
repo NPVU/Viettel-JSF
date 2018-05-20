@@ -26,6 +26,25 @@ import org.slf4j.LoggerFactory;
 public class BaiVietDataProvider implements Serializable{
     private static final Logger log = LoggerFactory.getLogger(BaiVietDataProvider.class); 
     
+    public DanhMucBaiVietModel getDanhMucBaiVietByID(int danhMucID){
+        Session session = HibernateUtil.currentSession();
+        DanhMucBaiVietModel objDMBaiViet = new DanhMucBaiVietModel();
+        try {
+            session.beginTransaction();
+            objDMBaiViet = (DanhMucBaiVietModel) session.createSQLQuery("SELECT *"
+                    + " FROM danhmuc_baiviet"                   
+                    + " WHERE danhmuc_baiviet_id = " + danhMucID)
+                    .addEntity(DanhMucBaiVietModel.class)
+                    .uniqueResult();
+            session.getTransaction().commit();
+	} catch (Exception e) {
+            log.error("Lỗi get danh mục bài viết ID: "+danhMucID+" {}", e);
+	} finally {
+            session.close();
+	}
+        return objDMBaiViet;
+    }
+    
     public List<DanhMucBaiVietModel> getDanhSachDanhMucBaiViet(String tenDanhMucFilter, int trangThaiFilter){
         Session session = HibernateUtil.currentSession();
         List<DanhMucBaiVietModel> dsDMBaiViet = new ArrayList();
@@ -164,6 +183,50 @@ public class BaiVietDataProvider implements Serializable{
             session.close();
 	}
         return objBaiViet;
+    }
+    
+//    public List<Map> getDanhSachBaiVietByDanhMucID(int danhMucID){
+//        Session session = HibernateUtil.currentSession();
+//        List<Map> mapBaiViet = new ArrayList<>();        
+//        try {
+//            session.beginTransaction();
+//            mapBaiViet = session.createSQLQuery(" SELECT * "
+//                    + " FROM baiviet bv "
+//                    + " LEFT JOIN taptin tt "
+//                    + " ON tt.taptin_id = bv.taptin_id "
+//                    + " WHERE bv.danhmuc_baiviet_id = "+danhMucID
+//                    + " AND baiviet_xuatban = 1 "
+//                    + " ORDER BY baiviet_id DESC ")
+//                    .setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP)
+//                    .list();
+//            session.getTransaction().commit();
+//	} catch (Exception e) {
+//            log.error("Lỗi get list map bài viết của danh mục ID: "+danhMucID+" {}", e);
+//	} finally {
+//            session.close();
+//	}
+//        return mapBaiViet;
+//    }
+    
+    public List<BaiVietModel> getDanhSachBaiVietByDanhMucID(int danhMucID){
+        Session session = HibernateUtil.currentSession();
+        List<BaiVietModel> dsBaiViet = new ArrayList<>();        
+        try {
+            session.beginTransaction();
+            dsBaiViet = session.createSQLQuery(" SELECT * "
+                    + " FROM baiviet bv "
+                    + " WHERE bv.danhmuc_baiviet_id = "+danhMucID
+                    + " AND baiviet_xuatban = 1 "
+                    + " ORDER BY baiviet_id DESC ")
+                    .addEntity(BaiVietModel.class)
+                    .list();
+            session.getTransaction().commit();
+	} catch (Exception e) {
+            log.error("Lỗi get list bài viết của danh mục ID: "+danhMucID+" {}", e);
+	} finally {
+            session.close();
+	}
+        return dsBaiViet;
     }
     
     public BaiVietModel getBaiVietMoiNhatByDanhMucID(int danhMucID){

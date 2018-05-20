@@ -21,7 +21,9 @@ and open the template in the editor.
                     </div>
                     <div class="underline"></div>
                     <div class="post-inner">
-                        <h:outputText value="#{ThongTinController.objBaiViet.noiDung}" escape="false" />
+                        <h:form id="frmShowBaiViet">
+                            <h:outputText value="#{ThongTinController.objBaiViet.noiDung}" escape="false" />
+                        </h:form>
                     </div>
                 </div>
             </div>
@@ -34,14 +36,22 @@ and open the template in the editor.
                     </div>
                     <div class="underline"></div>
                     <div class="box-content">
-                        <h:form>
+                        <h:form class="frmMenu">
                             <ul class="list-baiviet-lienquan">
-                            <c:forEach items="#{ThongTinController.dsBaiViet}" var="row">
-                                <li>
-                                    <i class="fa fa-arrow-circle-o-right" style="color:#E8CE0E"></i>
-                                    <h:commandLink value=" #{row.tieuDe}"></h:commandLink>
-                                </li>
-                            </c:forEach>
+                                <c:if test="#{ThongTinController.dsBaiViet.size() == 0}">
+                                    <p>Không tìm thấy bài viết liên quan.</p>
+                                </c:if>
+                                <c:if test="#{ThongTinController.dsBaiViet.size() > 0}">
+                                    <c:forEach items="#{ThongTinController.dsBaiViet}" var="row">
+                                        <li>
+                                            <i class="fa fa-arrow-circle-o-right" style="color:#E8CE0E"></i>
+                                            <a href="#">
+                                                <h:commandButton value="#{row.tieuDe}" action="#{ThongTinController.actionViewBaiViet(row.id)}">                                               
+                                                </h:commandButton>
+                                            </a> 
+                                        </li>
+                                    </c:forEach>
+                                </c:if>
                             </ul>
                         </h:form>
                     </div>

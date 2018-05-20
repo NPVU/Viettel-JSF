@@ -56,6 +56,10 @@ and open the template in the editor.
         <pattern value="/quan-ly/bai-viet/preview/" />
         <view-id value="/faces/page/quanly/baiviet/Preview.xhtml" />
     </url-mapping>
+    <url-mapping id="ViewMenu">
+        <pattern value="/view/" />
+        <view-id value="/faces/page/view/ViewMenu.xhtml" />
+    </url-mapping>
     
     <url-mapping id="QuanLyPreviewBaiViet">
         <pattern value="/quan-ly/cau-hinh-chung/" />

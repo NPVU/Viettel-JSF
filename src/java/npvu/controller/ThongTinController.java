@@ -70,6 +70,15 @@ public class ThongTinController implements Serializable{
     
     private void actionGetBaiVietLienQuan(BaiVietModel baiViet){
         dsBaiViet  = bvProvider.getBaiVietLienQuan(baiViet);
+    }       
+    
+    public List<BaiVietModel> actionGetDanhSachBaiVietByDanhMucID(int danhMucID){
+        return bvProvider.getDanhSachBaiVietByDanhMucID(danhMucID);
+    }
+    
+    public void actionViewBaiViet(int baiVietID){
+        objBaiViet = bvProvider.getBaiVietByID(baiVietID);
+        actionGetBaiVietLienQuan(objBaiViet);
     }
     
     /* Getter && Setter */
