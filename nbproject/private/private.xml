@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/UserTemplate.xhtml</file>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/admin/left.xhtml</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/src/java/npvu/dataprovider/BaiVietDataProvider.java</file>
             <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/src/java/npvu/controller/ThongTinController.java</file>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/admin/dashboard.xhtml</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/resources/css/user_template/style.css</file>
             <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/user/content.xhtml</file>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/admin/top.xhtml</file>
             <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/user/header.xhtml</file>
-            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/resources/js/user_template/jquery.js</file>
+            <file>file:/E:/NPVU_PROJECT/NPVU-GitHub/Viettel-JSF/web/template/user/footer.xhtml</file>
         </group>
     </open-files>
 </project-private>
