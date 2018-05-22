@@ -8,10 +8,9 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <section id="content" class="wow fadeInDown">    
+    <section id="content">    
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-                
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 wow fadeInDown">                
                 <div class="box">
 <!--                    <img class="img-fork" style="float: right;  right: 0; border: 0; z-index: 1050;" src="/resources/img/logo1.png" alt="Viettel"/>-->
                     <div class="section-title">
@@ -27,8 +26,8 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                <div class="box"  id="baivietlienquan">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="baivietlienquan">
+                <div class="box">
                     <div class="section-title">
                         <div class="text-title">
                             <h4>Bài viết liên quan</h4>   
@@ -57,11 +56,22 @@ and open the template in the editor.
                     </div>
                 </div>                              
             </div>    
-        </div>
-        <script>
-            $(window).load(function(){
-              $("#baivietlienquan").sticky({ topSpacing: 80 });
-            });
+        </div>               
+        <script type="text/javascript">
+            window.onscroll = function() {myFunction()};
+
+            var header = document.getElementById("baivietlienquan");
+            var sticky = header.offsetTop;
+
+            function myFunction() {
+              if(screen.width > 991){
+                    if (window.pageYOffset >= sticky+90) {
+                      header.classList.add("fixed-baiviet");
+                    } else {
+                      header.classList.remove("fixed-baiviet");
+                    }
+                }
+            }
         </script> 
     </section>
 </html>

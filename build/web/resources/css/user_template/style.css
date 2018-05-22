@@ -700,3 +700,14 @@ label {
         overflow: visible;
     }
 }
+.fixed-baiviet{
+    position: fixed !important;
+    top: 80px;
+    right: 50px;
+    z-index: 1000;
+}
+@media (max-width: 1130px){
+    .fixed-baiviet{
+        right: 10px;
+        }
+}
