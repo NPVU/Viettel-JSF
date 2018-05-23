@@ -10,119 +10,131 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <div class="content-wrapper" style="min-height: 901px;">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                TRANG QUẢN LÝ        
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#{request.contextPath}/"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Trang quản lý</li>
-            </ol>
-        </section>
+        <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) 
+                                          or Login.checkRole(Constant.role_admin_taikhoan)
+                                          or Login.checkRole(Constant.role_admin_baiviet)
+                                          or Login.checkRole(Constant.role_admin_hethong)}">
 
-        <!-- Main content -->
-        <section class="content">
-            <div class="row">
-                <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) or Login.checkRole(Constant.role_admin_taikhoan)}">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <a href="#{request.contextPath}/quan-ly/tai-khoan/">
-                            <div class="info-box">
-                                <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    TRANG QUẢN LÝ        
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#{request.contextPath}/"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Trang quản lý</li>
+                </ol>
+            </section>
 
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Quản lý tài khoản</span>
-                                    <span class="info-box-number">#{taiKhoanController.dsTaiKhoan.size()}</span>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) or Login.checkRole(Constant.role_admin_taikhoan)}">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <a href="#{request.contextPath}/quan-ly/tai-khoan/">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Quản lý tài khoản</span>
+                                        <span class="info-box-number">#{taiKhoanController.dsTaiKhoan.size()}</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
                                 </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                        </a>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-<!--                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <a href="#{request.contextPath}/quan-ly/lich-su-dang-nhap/">
-                            <div class="info-box">
-                                <span class="info-box-icon bg-green"><i class="fa fa-calendar"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">lịch sử đăng nhập</span>
-                                    <span class="info-box-number">410</span>
-                                </div>
-                                 /.info-box-content 
-                            </div>
-                        </a>
-                         /.info-box 
-                    </div>-->
-                </h:panelGroup>
-                <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) or Login.checkRole(Constant.role_admin_baiviet)}">
-                    <!-- /.col -->
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <a href="#{request.contextPath}/quan-ly/danh-muc-bai-viet/">
-                            <div class="info-box">
-                                <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Danh mục bài viết</span>
-                                    <span class="info-box-number">#{DanhMucBaiVietController.dsDMBaiViet.size()}</span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                        </a>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <a href="#{request.contextPath}/quan-ly/bai-viet/">
-                            <div class="info-box">
-                                <span class="info-box-icon bg-yellow"><i class="fa fa-wpforms"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Bài viết</span>
-                                    <span class="info-box-number">#{BaiVietController.dsBaiViet.size()}</span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                        </a>
-                        <!-- /.info-box -->
-                    </div>
-                </h:panelGroup>
-                <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) or Login.checkRole(Constant.role_admin_hethong)}">
-                    <!-- /.col -->
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <a href="#{request.contextPath}/quan-ly/cau-hinh-chung/">
-                            <div class="info-box">
-                                <span class="info-box-icon bg-yellow"><i class="fa fa-gear"></i></span>
-
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Cấu hình chung</span>
-                                    <span class="info-box-number"></span>
-                                </div>
-                                <!-- /.info-box-content -->
-                            </div>
-                        </a>
-                        <!-- /.info-box -->
-                    </div>
-                    <!-- /.col -->
-<!--                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-yellow"><i class="fa fa-gears"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">Cấu hình chức năng</span>
-                                <span class="info-box-number"></span>
-                            </div>
-                             /.info-box-content 
+                            </a>
+                            <!-- /.info-box -->
                         </div>
-                         /.info-box 
-                    </div>-->
-                </h:panelGroup>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
+                        <!-- /.col -->
+                        <!--                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <a href="#{request.contextPath}/quan-ly/lich-su-dang-nhap/">
+                                                    <div class="info-box">
+                                                        <span class="info-box-icon bg-green"><i class="fa fa-calendar"></i></span>
+                        
+                                                        <div class="info-box-content">
+                                                            <span class="info-box-text">lịch sử đăng nhập</span>
+                                                            <span class="info-box-number">410</span>
+                                                        </div>
+                                                         /.info-box-content 
+                                                    </div>
+                                                </a>
+                                                 /.info-box 
+                                            </div>-->
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) or Login.checkRole(Constant.role_admin_baiviet)}">
+                        <!-- /.col -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <a href="#{request.contextPath}/quan-ly/danh-muc-bai-viet/">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
 
-            <!-- =========================================================== -->
-        </section>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Danh mục bài viết</span>
+                                        <span class="info-box-number">#{DanhMucBaiVietController.dsDMBaiViet.size()}</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <a href="#{request.contextPath}/quan-ly/bai-viet/">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-yellow"><i class="fa fa-wpforms"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Bài viết</span>
+                                        <span class="info-box-number">#{BaiVietController.dsBaiViet.size()}</span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    </h:panelGroup>
+                    <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) or Login.checkRole(Constant.role_admin_hethong)}">
+                        <!-- /.col -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <a href="#{request.contextPath}/quan-ly/cau-hinh-chung/">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-yellow"><i class="fa fa-gear"></i></span>
+
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Cấu hình chung</span>
+                                        <span class="info-box-number"></span>
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <!--                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="info-box">
+                                                    <span class="info-box-icon bg-yellow"><i class="fa fa-gears"></i></span>
+                        
+                                                    <div class="info-box-content">
+                                                        <span class="info-box-text">Cấu hình chức năng</span>
+                                                        <span class="info-box-number"></span>
+                                                    </div>
+                                                     /.info-box-content 
+                                                </div>
+                                                 /.info-box 
+                                            </div>-->
+                    </h:panelGroup>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <!-- =========================================================== -->
+            </section>
+        </h:panelGroup>
+        <h:panelGroup rendered="#{!Login.checkRole(Constant.role_full) 
+                                          and !Login.checkRole(Constant.role_admin_taikhoan)
+                                          and !Login.checkRole(Constant.role_admin_baiviet)
+                                          and !Login.checkRole(Constant.role_admin_hethong)}">
+            <ui:include src="/page/error/401.xhtml" />
+        </h:panelGroup>
         <!-- /.content -->
     </div>
     <style>
