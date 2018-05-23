@@ -45,7 +45,7 @@ and open the template in the editor.
                                 <a href="#{request.contextPath}/dang-nhap/"><i class="fa fa-sign-in"></i> ĐĂNG NHẬP</a>
                             </c:if>
                             <c:if test="#{Login.logined}">
-                                <a href="#">
+                                <a href="#{request.contextPath}/quan-ly/thong-tin-tai-khoan/">
                                     <h:graphicImage library="resources" name="#{FileConstant.path_upload_avatar}#{Login.objTapTin.tenLuuTru}"
                                         class="user-image" alt="Avatar"/>
                                     #{Login.objTaiKhoan.tenHienThi}

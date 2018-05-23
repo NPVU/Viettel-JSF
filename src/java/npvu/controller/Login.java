@@ -91,14 +91,8 @@ public class Login implements Serializable{
                 if(objTapTin == null){
                     objTapTin = new TapTinModel();
                     objTapTin.setTenLuuTru(FileConstant.FILE_NAME_AVATAR_DEFAULT);
-                } else {
-                    File avatar = new File(FileConstant.PATH_UPLOAD_AVATAR+objTapTin.getTenLuuTru());
-                    if(!avatar.exists()){
-                        objTapTin.setTenLuuTru(FileConstant.FILE_NAME_AVATAR_DEFAULT);
-                    }
-                }
-                               
-                
+                } 
+                                               
                 try {
                     ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
                     ec.redirect(ec.getRequestContextPath() + "/");
@@ -129,6 +123,7 @@ public class Login implements Serializable{
     public void logout(){
         logined     = false;
         objTaiKhoan = null;
+        objTapTin   = null;
         thoiGian    = null;
         tempMatKhau = null;
         roles       = null;

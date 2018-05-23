@@ -40,6 +40,15 @@ and open the template in the editor.
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu tree" data-widget="tree">
+                <li>
+                    <a href="#{request.contextPath}/quan-ly/thong-tin-tai-khoan/">
+                        <i class="fa fa-user"></i>
+                        <span>Thông tin tài khoản</span>
+                        <span class="pull-right-container">
+                            <span class="label bg-blue pull-right">hoạt động</span>
+                        </span>
+                    </a>
+                </li>
                 <h:panelGroup rendered="#{Login.checkRole(Constant.role_full) 
                                           or Login.checkRole(Constant.role_admin_taikhoan)
                                           or Login.checkRole(Constant.role_admin_baiviet)
