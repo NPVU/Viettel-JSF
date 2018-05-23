@@ -47,13 +47,17 @@ and open the template in the editor.
                             <c:if test="#{Login.logined}">
                                 <a href="#">
                                     <h:graphicImage library="resources" name="#{FileConstant.path_upload_avatar}#{Login.objTapTin.tenLuuTru}"
-                                        class="user-image" alt="User Image"/>
+                                        class="user-image" alt="Avatar"/>
                                     #{Login.objTaiKhoan.tenHienThi}
                                 </a>
                                 <div class="dropdown-content">
                                     <a href="#{request.contextPath}/quan-ly/thong-tin-tai-khoan/">Thông tin tài khoản</a>
+                                    <c:if test="#{Login.checkRole(Constant.role_full) || Login.checkRole(Constant.role_admin_hethong) || Login.checkRole(Constant.role_admin_baiviet) || Login.checkRole(Constant.role_admin_taikhoan)}">
                                     <a href="#{request.contextPath}/quan-ly/">Trang quản lý</a>
-                                    <a href="#{request.contextPath}/dang-xuat/">Thoát</a>
+                                    </c:if>
+                                    <h:form class="">
+                                        <h:commandLink value="Thoát" actionListener="#{Login.logout()}"/>
+                                    </h:form>                                        
                                 </div>
                             </c:if>                           
                         </li>                        
